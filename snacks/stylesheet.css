@@ -1,0 +1,370 @@
+/* stylesheet.css
+   Black & White aesthetic for SkillSnacks snack pages
+   Fonts: system UI fallback + Poppins + Proza Libre (loaded in the HTML)
+*/
+
+/* ---------- 0. Reset & base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Poppins", "Proza Libre", Arial, sans-serif;
+  background: #fff;
+  color: #111;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+}
+
+/* Utility */
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small helper classes */
+.sr-only,
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* ---------- 1. Header / Nav ---------- */
+.site-header {
+  background: #000;            /* black header */
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 0;
+}
+.logo {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+.site-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.35rem 0.45rem;
+  border-radius: 6px;
+}
+.nav-link:focus,
+.nav-link:hover {
+  color: #000;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+@media (max-width: 740px) {
+  .site-nav .nav-list { display: none; } /* hide full menu on small; you can add mobile menu later */
+}
+
+/* ---------- 2. Page intro ---------- */
+.page-title {
+  margin: 1.25rem 0 0.25rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: left;
+}
+.lead {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* ---------- 3. Main layout ---------- */
+.snack-page {
+  padding: 1.75rem 0 3rem;
+}
+
+/* Article wrapper */
+.snack-article {
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem;
+  box-shadow: 0 6px 24px rgba(10,10,10,0.04);
+  margin-bottom: 2rem;
+}
+
+/* header inside article */
+.snack-header {
+  margin-bottom: 0.75rem;
+}
+.snack-title {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 2rem;
+  line-height: 1.05;
+  margin: 0 0 0.35rem;
+  font-weight: 800;
+  color: #0a0a0a;
+}
+.snack-meta {
+  margin: 0 0 0.45rem;
+  color: #666;
+  font-size: 0.94rem;
+}
+.snack-summary {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 0.65rem;
+}
+
+/* ---------- 4. Media (figure/img) ---------- */
+.snack-media {
+  margin: 0.5rem 0 1.25rem;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  display: block;
+}
+.snack-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 520px;
+}
+
+/* figcaption hidden visually (we used alt text) */
+.snack-media figcaption { display: none; }
+
+/* ---------- 5. Section headings & content blocks ---------- */
+.snack-article section {
+  margin: 1rem 0;
+}
+.snack-article h2,
+.snack-article h3 {
+  margin: 0 0 0.5rem;
+  color: #111;
+  font-weight: 700;
+}
+.snack-article p {
+  margin: 0.35rem 0 0.7rem;
+  color: #333;
+}
+.snack-article ul,
+.snack-article ol {
+  margin: 0.35rem 0 0.75rem 1.25rem;
+  color: #333;
+}
+
+/* Steps list styling */
+.snack-steps ol {
+  counter-reset: step;
+}
+.snack-steps ol > li {
+  margin-bottom: 0.6rem;
+  padding-left: 0.5rem;
+}
+
+/* Mini template (pre) */
+.mini-template {
+  background: #fafafa;
+  border: 1px dashed #e6e6e6;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  color: #222;
+  white-space: pre-wrap;
+}
+
+/* ---------- 6. Reflection textarea & controls ---------- */
+.snack-reflect textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 72px;
+  background: #fff;
+  color: #111;
+  transition: box-shadow 0.12s ease, border-color 0.12s ease;
+}
+.snack-reflect textarea:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* reflection buttons row */
+.reflection-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.btn--tertiary {
+  background: transparent;
+  border: 1px solid #ddd;
+  color: #111;
+  padding: 0.45rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn--tertiary:hover,
+.btn--tertiary:focus {
+  background: #f6f6f6;
+  border-color: #ccc;
+}
+
+/* ---------- 7. Buttons: primary & secondary ---------- */
+.btn--primary {
+  display: inline-block;
+  padding: 0.7rem 1.05rem;
+  background: #000;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.18s ease, transform 0.08s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.btn--primary:hover,
+.btn--primary:focus {
+  background: #222;
+  transform: translateY(-1px);
+  outline: none;
+}
+.btn--secondary {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  background: #fff;
+  color: #000;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background: #f6f6f6;
+  border-color: #ddd;
+  outline: none;
+}
+
+/* status message */
+.status-msg {
+  color: #2b2b2b;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+/* ---------- 8. Footer actions inside article ---------- */
+.snack-footer {
+  margin-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 0.9rem;
+}
+
+/* ---------- 9. Resources & links ---------- */
+.snack-resources ul {
+  margin-left: 1.05rem;
+}
+.snack-resources a {
+  color: #000;
+  text-decoration: underline;
+}
+.snack-resources a:hover,
+.snack-resources a:focus {
+  color: #111;
+  text-decoration: none;
+}
+
+/* ---------- 10. Small components: quiz, tips ---------- */
+.snack-quiz li,
+.snack-tips li {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* ---------- 11. Footer ---------- */
+.site-footer {
+  border-top: 1px solid #eee;
+  margin-top: 2.5rem;
+  padding: 2rem 0;
+  background: #fff;
+}
+.footer-inner {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-about h3 { margin: 0 0 0.25rem; }
+.footer-about p { margin: 0; color: #444; }
+.footer-links a { color: #111; text-decoration: none; }
+.footer-links a:hover { text-decoration: underline; color: #000; }
+
+/* ---------- 12. Accessibility focus outline ---------- */
+:focus {
+  outline: 3px solid rgba(0,0,0,0.08);
+  outline-offset: 2px;
+}
+
+/* ---------- 13. Responsive adjustments ---------- */
+@media (max-width: 900px) {
+  .snack-title { font-size: 1.6rem; }
+  .snack-image { max-height: 420px; }
+  .container { width: 94%; }
+}
+
+@media (max-width: 640px) {
+  .page-title { text-align: center; font-size: 1.4rem; }
+  .snack-article { padding: 1rem; border-radius: 10px; }
+  .snack-header { text-align: left; }
+  .snack-title { font-size: 1.4rem; }
+  .header-inner { padding: 0.75rem 0; }
+}
+
+/* ---------- 14. Print styles (simple) ---------- */
+@media print {
+  body { background: #fff; color: #000; }
+  .site-header, .site-footer, .nav-list, .reflection-actions { display: none !important; }
+  .snack-article { border: none; box-shadow: none; margin: 0; padding: 0; }
+  .snack-image { display: none; }
+  .mini-template { border: 1px dashed #111; background: #fff; }
+}
