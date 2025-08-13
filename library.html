@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Responsive Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillSnacks | Library</title>
+
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="stylesheet.css">
+
+  <!-- Font Stack -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Proza+Libre:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Poppins", "Proza Libre", Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="SkillSnacks Home">SkillSnacks</a>
+    <nav class="site-nav" role="navigation" aria-label="Main menu">
+      <ul class="nav-list">
+        <li><a href="index.html"  class="nav-link">Home</a></li>
+        <li><a href="library.html" class="nav-link">Library</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="about.html"   class="nav-link">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- LIBRARY INTRO -->
+  <section class="library-intro" role="region" aria-labelledby="library-intro-title">
+    <div class="container">
+      <h1 id="library-intro-title" class="section-title">Your Snack Library</h1>
+      <p class="section-subtitle">
+        Bite‑sized, practical lessons to help you master everyday skills—no tech background required.
+      </p>
+    </div>
+  </section>
+
+  <!-- FILTER & SEARCH -->
+  <section class="filters" role="region" aria-labelledby="filters-title">
+    <div class="container">
+      <h2 id="filters-title" class="section-title">Filter & Search</h2>
+      <form class="filter-form" role="search" aria-label="Filter and search snacks">
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+          <option value="all">All</option>
+          <option value="money">Money</option>
+          <option value="health">Health</option>
+          <option value="productivity">Productivity</option>
+          <option value="communication">Communication</option>
+          <option value="wellbeing">Well‑Being</option>
+        </select>
+
+        <label for="search">Search:</label>
+        <input type="search" id="search" name="search" placeholder="e.g. Budgeting">
+
+        <button type="submit" class="btn--primary">Apply</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- SNACK CARDS GRID -->
+  <main class="snacks" id="snacks" role="main" aria-labelledby="snacks-title">
+    <div class="container">
+      <h2 id="snacks-title" class="section-title">All Snacks</h2>
+      <div class="snacks-grid">
+
+        <!-- Snack Card 1 -->
+        <article class="snack-card" aria-labelledby="snack-budgeting">
+          <img src="images/money.jpg" alt="Coins and notebook" class="snack-image">
+          <div class="snack-content">
+            <h3 id="snack-budgeting" class="snack-title">Budgeting Basics</h3>
+            <p class="snack-desc">
+              Learn to track your income and expenses, set simple budgets, and avoid end-of-month shortfalls.
+            </p>
+            <a href="snacks\snack-budgeting.html" class="btn--secondary" role="button">View Snack</a>
+          </div>
+        </article>
+
+        <!-- Snack Card 2 -->
+        <article class="snack-card" aria-labelledby="snack-sleep">
+          <img src="images\sleep.jpg" alt="Person sleeping peacefully" class="snack-image">
+          <div class="snack-content">
+            <h3 id="snack-sleep" class="snack-title">Better Sleep Hygiene</h3>
+            <p class="snack-desc">
+              Simple evening routines and breathing exercises that help you fall asleep faster and wake up refreshed.
+            </p>
+            <a href="snacks\snack-sleep-hygiene.html" class="btn--secondary" role="button">View Snack</a>
+          </div>
+        </article>
+
+        <!-- Snack Card 3 -->
+        <article class="snack-card" aria-labelledby="snack-time">
+          <img src="images\time.jpg" alt="Clock with calendar" class="snack-image">
+          <div class="snack-content">
+            <h3 id="snack-time" class="snack-title">Time Management</h3>
+            <p class="snack-desc">
+              Master the Pomodoro Technique and simple to‑do list hacks to get more done in less time.
+            </p>
+            <a href="snacks\snack-time-management.html" class="btn--secondary" role="button">View Snack</a>
+          </div>
+        </article>
+
+        <!-- Snack Card 4 -->
+        <article class="snack-card" aria-labelledby="snack-communication">
+          <img src="images\communication.jpg" alt="Two people talking" class="snack-image">
+          <div class="snack-content">
+            <h3 id="snack-communication" class="snack-title">Effective Communication</h3>
+            <p class="snack-desc">
+              Learn the key principles of active listening and clear message delivery in everyday conversations.
+            </p>
+            <a href= "snacks\snack-communication.html" class="btn--secondary" role="button">View Snack</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-about">
+        <h3>About SkillSnacks</h3>
+        <p>
+          Bite‑sized learning for real‑world life skills. Small steps, big impact.
+        </p>
+      </div>
+      <nav class="footer-links" role="navigation" aria-label="Footer menu">
+        <ul class="footer-nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="library.html">Library</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <div class="footer-legal">
+      </div>
+    </div>
+  </footer>
+  <script src="script.js" defer></script>
+
+
+</body>
+</html>

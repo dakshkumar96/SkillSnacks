@@ -1,0 +1,1068 @@
+/* 1. Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Fonts & Body */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Proza+Libre:wght@400;600&display=swap');
+
+body {
+  /* SF system UI, then Poppins, then Proza Libre, then sans-serif */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Poppins", "Proza Libre", Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* 3. Utility Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 4. Header */
+.site-header {
+  background: #000000;
+  border-bottom: 1px solid #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000000;
+}
+.site-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: #444;
+}
+
+/* 5. Hero Section */
+.hero {
+  padding: 4rem 0;
+}
+.hero-inner {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero-content {
+  flex: 1 1 400px;
+}
+.hero-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem; 
+  text-align: center;
+}
+
+.hero-subtitle {
+  font-family: "Proza Libre", serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+
+.btn--primary {
+  padding: 0.75rem 2rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn--primary:hover,
+.btn--primary:focus {
+  background-color: #333;
+}
+
+/* 6. Available Courses Section */
+.courses {
+  padding: 3rem 0;
+}
+.section-title {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.course-card {
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.course-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+.course-title {
+  font-family: "Proza Libre", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1rem;
+}
+.course-desc {
+  flex: 1;
+  font-size: 0.95rem;
+  color: #333;
+  margin: 0 1rem 1.5rem;
+}
+.btn--secondary {
+  margin: 0 1rem 1rem;
+  padding: 0.5rem 1.25rem;
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background-color: #333;
+}
+
+/* 7. Footer */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid #000;
+  padding: 2rem 0;
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.footer-about,
+.footer-links,
+.footer-legal {
+  flex: 1 1 200px;
+}
+.footer-about h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.footer-about p {
+  font-size: 0.95rem;
+  color: #333;
+}
+.footer-nav-list {
+  list-style: none;
+}
+.footer-nav-list li {
+  margin-bottom: 0.5rem;
+}
+.footer-nav-list a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+.footer-nav-list a:hover,
+.footer-nav-list a:focus {
+  color: #444;
+}
+.footer-legal p {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* 8. Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
+  }
+  .header-inner,
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .site-nav .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+/* styles.css – Black & White Theme, Single File */
+
+/* 1. Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Poppins", "Proza Libre", Arial, sans-serif;
+  background: #fff;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* 2. Utility */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* Quotes Section */
+.quotes-section {
+  background: #f7f7f7;
+  padding: 4rem 0;
+}
+
+.quotes-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.quotes-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.quotes-slider {
+  display: flex;
+  gap: 2rem;
+  overflow: hidden;
+  animation: slideQuotes 20s linear infinite;
+}
+
+.quote-card {
+  flex: 0 0 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.quote-card blockquote {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.quote-card cite {
+  font-weight: 500;
+  color: #666;
+}
+
+/* Mobile fallback: stack quotes instead of sliding */
+@media (max-width: 768px) {
+  .quotes-slider {
+    animation: none;
+    flex-direction: column;
+  }
+
+  .quote-card {
+    flex: 1 1 auto;
+  }
+}
+
+/* 3. Header */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+}
+.site-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: #444;
+}
+/* How It Works Section */
+.how-it-works {
+  background: #f7f7f7; 
+  padding: 4rem 0;
+}
+
+.how-it-works .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.how-it-works .section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #333;
+}
+
+.steps-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0;
+}
+
+.step-item {
+  background: #e9ecef; 
+  padding: 2rem;
+  border-radius: 16px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.step-item:hover {
+  transform: translateY(-5px);
+}
+
+.step-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.step-desc {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+.hero-inner {
+  background-image: url('images/bg.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 6rem 2rem;
+  border-radius: 12px;
+  position: relative;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* 4. Library Intro */
+.library-intro {
+  padding: 3rem 0;
+  text-align: center;
+}
+.library-intro .section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.library-intro .section-subtitle {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* 5. Filters & Search */
+.filters {
+  padding: 2rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.filter-form label {
+  font-weight: 500;
+}
+.filter-form select,
+.filter-form input[type="search"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.filter-form button {
+  padding: 0.6rem 1.5rem;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.filter-form button:hover,
+.filter-form button:focus {
+  background: #333;
+}
+
+/* 6. Snacks Grid */
+.snacks {
+  padding: 3rem 0;
+}
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.snacks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.snack-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.snack-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.snack-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.snack-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.snack-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.snack-desc {
+  flex: 1;
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+.btn--secondary {
+  align-self: start;
+  padding: 0.5rem 1.25rem;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background: #333;
+}
+
+/* 7. Footer */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid #000;
+  padding: 2rem 0;
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.footer-about,
+.footer-links,
+.footer-legal {
+  flex: 1 1 200px;
+}
+.footer-about h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.footer-about p {
+  font-size: 0.95rem;
+  color: #333;
+}
+.footer-nav-list {
+  list-style: none;
+}
+.footer-nav-list li {
+  margin-bottom: 0.5rem;
+}
+.footer-nav-list a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+.footer-nav-list a:hover,
+.footer-nav-list a:focus {
+  color: #444;
+}
+.footer-legal p {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* 8. Responsive */
+@media (max-width: 768px) {
+  .filter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .snacks-grid {
+    grid-template-columns: 1fr;
+  }
+  .header-inner,
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .site-nav .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+/* styles.css – Black & White Theme, Single File */
+
+/* 1. Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Poppins", "Proza Libre", Arial, sans-serif;
+  background: #fff;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* 2. Utility Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 3. Header */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+}
+.site-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: #444;
+}
+
+/* 4. Section Titles & Intro */
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.section-subtitle {
+  font-size: 1.05rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* 5. Library Intro & Dashboard Hero */
+.library-intro,
+.library-intro + .section-subtitle,
+.library-intro .section-subtitle,
+.filters + .section-title {
+  padding: 3rem 0;
+}
+
+/* (Re-use filters styling for dashboard intro) */
+.filters {
+  padding: 2rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* 6. Progress Summary Grid */
+.progress-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.summary-card {
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+.summary-number {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.summary-label {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* 7. Recent Activity List */
+.activity-list {
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.activity-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+.activity-item time {
+  font-style: italic;
+  color: #555;
+}
+.activity-link {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.activity-link:hover,
+.activity-link:focus {
+  color: #444;
+}
+
+/* 8. Quote Block */
+.quote {
+  margin: 1.5rem auto;
+  max-width: 700px;
+  font-size: 1.1rem;
+  font-style: italic;
+  text-align: center;
+  border-left: 4px solid #000;
+  padding-left: 1rem;
+  color: #333;
+}
+.quote cite {
+  display: block;
+  margin-top: 0.5rem;
+  text-align: right;
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* 9. Settings Form (re-using .filter-form) */
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+.filter-form label {
+  font-weight: 500;
+}
+.filter-form input[type="time"],
+.filter-form select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.filter-form input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+.filter-form button {
+  padding: 0.6rem 1.5rem;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.filter-form button:hover,
+.filter-form button:focus {
+  background: #333;
+}
+
+/* 10. Footer */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid #000;
+  padding: 2rem 0;
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.footer-about,
+.footer-links,
+.footer-legal {
+  flex: 1 1 200px;
+}
+.footer-about h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.footer-about p {
+  font-size: 0.95rem;
+  color: #333;
+}
+.footer-nav-list {
+  list-style: none;
+}
+.footer-nav-list li {
+  margin-bottom: 0.5rem;
+}
+.footer-nav-list a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+.footer-nav-list a:hover,
+.footer-nav-list a:focus {
+  color: #444;
+}
+.footer-legal p {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* 11. Responsive Breakpoints */
+@media (max-width: 768px) {
+  .progress-summary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .activity-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-inner,
+  .header-inner,
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .site-nav .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  .snacks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* styles.css – Black & White Theme, Single File */
+
+/* 1. Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Poppins", "Proza Libre", Arial, sans-serif;
+  background: #fff;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* 2. Utility Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 3. Header */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+}
+.site-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: #444;
+}
+
+/* 4. Section Titles & Subtitles */
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.section-subtitle {
+  font-size: 1.05rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* 5. About Hero */
+.library-intro {
+  padding: 3rem 0;
+}
+
+/* 6. Mission & Vision (re-using summary‑card styles) */
+.how-it-works {
+  padding: 3rem 0;
+}
+.progress-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.summary-card {
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+.summary-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* 9. Core Values (feature‑card) */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.feature-card {
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.feature-desc {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* 10. Footer */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid #000;
+  padding: 2rem 0;
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.footer-about,
+.footer-links,
+.footer-legal {
+  flex: 1 1 200px;
+}
+.footer-about h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.footer-about p,
+.footer-legal p {
+  font-size: 0.95rem;
+  color: #333;
+}
+.footer-nav-list {
+  list-style: none;
+}
+.footer-nav-list li {
+  margin-bottom: 0.5rem;
+}
+.footer-nav-list a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+.footer-nav-list a:hover,
+.footer-nav-list a:focus {
+  color: #444;
+}
+
+/* 11. Responsive Breakpoints */
+@media (max-width: 768px) {
+  .progress-summary-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .courses-grid,
+  .snacks-grid {
+    grid-template-columns: 1fr;
+  }
+  .header-inner,
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .site-nav .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+
+
