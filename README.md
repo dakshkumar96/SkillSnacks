@@ -14,7 +14,7 @@ SkillSnacks is a micro-learning platform that delivers practical, actionable lif
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Frontend**: HTML5, CSS3, JavaScript 
 - **Styling**: Custom CSS with Flexbox/Grid
 - **Fonts**: Poppins & Proza Libre (Google Fonts)
 
